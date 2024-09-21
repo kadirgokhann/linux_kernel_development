@@ -1,3 +1,18 @@
+1. What is a Kernel Driver?
+A kernel driver is a piece of software that allows the kernel to interact with hardware devices. It abstracts the complexities of hardware and provides an interface for the rest of the operating system to communicate with the device. Drivers are typically implemented as kernel modules, which are loaded dynamically when needed.
+
+2. Basic Structure of a Linux Driver
+Drivers are loaded into the kernel and interact with the kernel's subsystems. A typical Linux driver consists of:
+
+Initialization Function: Called when the driver is loaded.
+Exit Function: Called when the driver is unloaded.
+Device-Specific Functions: Functions to handle device operations like read, write, open, close, etc.
+Key Functions in a Driver:
+Module Initialization (module_init): This function is called when the module is loaded. It registers the driver with the kernel.
+Module Exit (module_exit): This function is called when the module is unloaded. It unregisters the driver from the kernel.
+3. Writing a Simple Kernel Module
+Let’s start with a basic "Hello, World!" module to get familiar with how drivers interact with the kernel.
+
 modulo.c
 Build the module:
 make
