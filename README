@@ -1,0 +1,22 @@
+modulo.c
+Build the module:
+make
+
+Load the module:
+sudo insmod hello.ko
+
+Check the kernel log for the message:
+dmesg | tail
+
+Unload the module:
+sudo rmmod hello
+
+character_device_modulo.c
+mknod /dev/simple_char_dev c <major_number> 0
+echo "data" > /dev/simple_char_dev
+cat /dev/simple_char_dev
+
+
+
+- How the Kernel Uses Drivers
+Once a driver is loaded, it interacts with the kernel subsystems, such as the device driver subsystem (e.g., block devices, character devices, network devices). The kernel uses device trees, udev, and sysfs to interact with devices and load drivers dynamically based on hardware detection
